@@ -1,73 +1,116 @@
-# React + TypeScript + Vite
+# MedSchedulerUZ — Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Frontend for the MedSchedulerUZ hospital/clinic schedule management system.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📋 About the Project
 
-## React Compiler
+**MedSchedulerUZ-Client** is the frontend interface for the MedSchedulerUZ platform. It provides a modern, responsive dashboard for managing hospital schedules — including creating, filtering, publishing, and archiving doctor timetables.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This repository contains the **frontend** (client) of the project. The backend API is available here: [MedSchedulerUZ](https://github.com/esanboyevjavohir/MedSchedulerUZ)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- 🔐 Login & role-based access control
+- 📅 Schedule management (create, edit, publish, archive)
+- 🔍 Search and filter by department, doctor, or status
+- 👥 User management panel
+- 📊 Dashboard with overview statistics
+- 🌙 Dark-themed UI with clean design
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | React 18 |
+| Language | TypeScript |
+| Styling | Tailwind CSS |
+| Build Tool | Vite |
+| HTTP Client | Axios |
+| Routing | React Router DOM |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- [Node.js 18+](https://nodejs.org/)
+- Backend API running (see [MedSchedulerUZ](https://github.com/esanboyevjavohir/MedSchedulerUZ))
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/esanboyevjavohir/MedSchedulerUZ-Client.git
+cd MedSchedulerUZ-Client
+
+# Install dependencies
+npm install
+
+# Create environment file
+cp .env.example .env
+# Set your API base URL in .env:
+# VITE_API_URL=https://localhost:5001
+
+# Start development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The app will be available at `http://localhost:5173`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📁 Project Structure
+
 ```
+MedSchedulerUZ-Client/
+├── src/
+│   ├── assets/            # Images, icons
+│   ├── components/        # Reusable UI components
+│   ├── context/           # React context (auth, etc.)
+│   ├── pages/             # Page components
+│   │   ├── dashboard/
+│   │   ├── schedules/     # SchedulesPage, etc.
+│   │   ├── users/
+│   │   └── ...
+│   ├── services/          # API call functions
+│   ├── types/             # TypeScript type definitions
+│   ├── App.tsx
+│   └── main.tsx
+├── .env                   # Environment variables (not committed)
+├── .gitignore
+├── package.json
+└── vite.config.ts
+```
+
+---
+
+## 📸 Screenshots
+
+<!-- Add your screenshots here -->
+<!-- Example:
+![Dashboard](assets/dashboard.png)
+![Schedules Page](assets/schedules.png)
+![Login Page](assets/login.png)
+-->
+
+*Screenshots coming soon*
+
+---
+
+## 🔗 Related
+
+- ⚙️ Backend Repository: [MedSchedulerUZ](https://github.com/esanboyevjavohir/MedSchedulerUZ)
+
+---
+
+## 👤 Author
+
+**Esanboyev Javohir**  
+GitHub: [@esanboyevjavohir](https://github.com/esanboyevjavohir)
